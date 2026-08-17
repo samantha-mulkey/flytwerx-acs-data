@@ -1,0 +1,287 @@
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+
+  /*
+    CHANGE ONLY THIS URL after you create the GitHub repository.
+
+    Example:
+    https://raw.githubusercontent.com/YOUR-USERNAME/flytwerx-acs-data/main/data/private-pilot-airplane.json
+  */
+  const ACS_DATA_URL =
+    "https://raw.githubusercontent.com/YOUR-USERNAME/flytwerx-acs-data/main/data/private-pilot-airplane.json";
+
+  const certificateSelect = document.getElementById("certificate-select");
+  const categorySelect = document.getElementById("category-select");
+  const maneuverSelect = document.getElementById("maneuver-select");
+  const viewStandardsButton = document.getElementById("view-standards");
+
+  if (!certificateSelect || !categorySelect || !maneuverSelect || !viewStandardsButton) {
+    console.error("ACS Checker: one or more required selector IDs are missing.");
+    return;
+  }
+
+  let acsData;
+
+  try {
+    const response = await fetch(ACS_DATA_URL, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`ACS data request failed: ${response.status}`);
+    }
+
+    acsData = await response.json();
+
+  } catch (error) {
+    console.error("ACS Checker: could not load ACS data.", error);
+    alert("The ACS standards data could not be loaded. Please try again.");
+    return;
+  }
+
+  function normalize(text) {
+    return String(text || "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+  }
+
+  function setText(id, value) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value ?? "";
+  }
+
+  function resolveManeuver(id) {
+    const item = acsData.maneuvers?.[id];
+    if (!item) return null;
+
+    if (item.aliasOf) {
+      const canonical = acsData.maneuvers?.[item.aliasOf];
+      if (!canonical) return item;
+
+      return {
+        ...canonical,
+        name: item.name,
+        displayNote: item.displayNote,
+        source: item.source || canonical.source
+      };
+    }
+
+    return item;
+  }
+
+  function resetManeuverDropdown(message) {
+    maneuverSelect.innerHTML = "";
+
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = message;
+
+    maneuverSelect.appendChild(option);
+  }
+
+  function populateManeuvers() {
+    const categoryOption = categorySelect.options[categorySelect.selectedIndex];
+
+    if (!categoryOption || categorySelect.selectedIndex === 0) {
+      resetManeuverDropdown("Select category first");
+      return;
+    }
+
+    const categoryKey = normalize(categoryOption.textContent);
+    const orderedIds = acsData.ui?.maneuverOrder?.[categoryKey] || [];
+
+    resetManeuverDropdown("Select maneuver");
+
+    orderedIds.forEach(function (id) {
+      const item = acsData.maneuvers?.[id];
+      if (!item) return;
+
+      const option = document.createElement("option");
+      option.value = id;
+      option.textContent = item.name;
+      maneuverSelect.appendChild(option);
+    });
+  }
+
+  function updateMetricSlot(index, metric) {
+    const card = document.getElementById(`metric-${index}-card`);
+    if (!card) return;
+
+    if (!metric) {
+      card.style.display = "none";
+      return;
+    }
+
+    card.style.display = "";
+
+    setText(`metric-${index}-label`, metric.label);
+    setText(`metric-${index}-value`, metric.value);
+    setText(`metric-${index}-unit`, metric.unit);
+    setText(`metric-${index}-description`, metric.description);
+    setText(`metric-${index}-note`, metric.note);
+
+    const toleranceWrap =
+      document.getElementById(`metric-${index}-tolerance-wrap`);
+
+    const toleranceRange =
+      document.getElementById(`metric-${index}-tolerance-range`);
+
+    if (!metric.showVisual) {
+      if (toleranceWrap) toleranceWrap.style.display = "none";
+      return;
+    }
+
+    if (toleranceWrap) toleranceWrap.style.display = "";
+
+    if (toleranceRange) {
+      toleranceRange.style.left = `${metric.rangeStart}%`;
+      toleranceRange.style.width = `${metric.rangeWidth}%`;
+    }
+
+    const minValue =
+      document.getElementById(`metric-${index}-range-min-value`);
+
+    const maxValue =
+      document.getElementById(`metric-${index}-range-max-value`);
+
+    const minMarker =
+      minValue?.closest(".acs-range-marker");
+
+    const maxMarker =
+      maxValue?.closest(".acs-range-marker");
+
+    const leftPosition = metric.rangeStart;
+    const rightPosition = metric.rangeStart + metric.rangeWidth;
+
+    if (minValue) minValue.textContent = metric.rangeMinLabel ?? "";
+    if (maxValue) maxValue.textContent = metric.rangeMaxLabel ?? "";
+
+    if (minMarker) minMarker.style.left = `${leftPosition}%`;
+    if (maxMarker) maxMarker.style.left = `${rightPosition}%`;
+  }
+
+  function updateCriteria(criteria) {
+    for (let i = 1; i <= 6; i++) {
+      const criterion = document.getElementById(`criterion-${i}`);
+      if (!criterion) continue;
+
+      const text = criteria?.[i - 1];
+
+      criterion.textContent = text ?? "";
+      criterion.style.display = text ? "" : "none";
+    }
+  }
+
+  function updateReviewVariables(reviewVariables) {
+    for (let i = 1; i <= 6; i++) {
+      const label = document.getElementById(`review-${i}-label`);
+      const text = document.getElementById(`review-${i}-text`);
+      const item = document.getElementById(`review-${i}-item`);
+
+      const reviewItem = reviewVariables?.[i - 1];
+
+      if (!reviewItem) {
+        if (item) {
+          item.style.display = "none";
+        } else {
+          if (label) label.style.display = "none";
+          if (text) text.style.display = "none";
+        }
+        continue;
+      }
+
+      if (item) item.style.display = "";
+
+      if (label) {
+        label.style.display = "";
+        label.textContent = reviewItem.label;
+      }
+
+      if (text) {
+        text.style.display = "";
+        text.textContent = reviewItem.text;
+      }
+    }
+  }
+
+  function updateSource(source) {
+    if (!source) return;
+
+    const sourceTitle = document.getElementById("faa-source-title");
+    const sourceReference = document.getElementById("faa-source-reference");
+    const sourceLink = document.getElementById("faa-source-link");
+
+    if (sourceTitle) {
+      sourceTitle.textContent =
+        "Source: " + (source.documentTitle || "FAA Airman Certification Standards");
+    }
+
+    if (sourceReference) {
+      sourceReference.textContent =
+        `${source.documentNumber || ""} · ${source.areaTask || ""}`;
+    }
+
+    if (sourceLink) {
+      sourceLink.href = source.url || "#";
+      sourceLink.target = "_blank";
+      sourceLink.rel = "noopener noreferrer";
+    }
+  }
+
+  categorySelect.addEventListener("change", populateManeuvers);
+
+  viewStandardsButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if (
+      certificateSelect.selectedIndex === 0 ||
+      categorySelect.selectedIndex === 0 ||
+      maneuverSelect.selectedIndex === 0
+    ) {
+      alert("Please select a certificate, category, and maneuver.");
+      return;
+    }
+
+    const certificateText =
+      certificateSelect.options[certificateSelect.selectedIndex].textContent.trim();
+
+    const categoryText =
+      categorySelect.options[categorySelect.selectedIndex].textContent.trim();
+
+    const maneuverId = maneuverSelect.value;
+    const maneuverData = resolveManeuver(maneuverId);
+
+    if (!maneuverData) {
+      alert("Standards for this selection are not available.");
+      return;
+    }
+
+    setText("result-maneuver-name", maneuverData.name);
+    setText("result-certificate", certificateText);
+    setText("result-category", categoryText);
+    setText("result-maneuver", maneuverData.name);
+
+    for (let i = 1; i <= 4; i++) {
+      updateMetricSlot(i, maneuverData.metrics?.[i - 1]);
+    }
+
+    updateCriteria(maneuverData.criteria);
+    updateReviewVariables(maneuverData.reviewVariables);
+    updateSource(maneuverData.source);
+
+    const resultTitle = document.getElementById("result-maneuver-name");
+
+    if (resultTitle) {
+      resultTitle.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+
+  if (categorySelect.selectedIndex > 0) {
+    populateManeuvers();
+  } else {
+    resetManeuverDropdown("Select category first");
+  }
+});
+</script>
