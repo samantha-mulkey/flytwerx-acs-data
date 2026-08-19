@@ -1,0 +1,1732 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "commercial-pilot-airplane-asel-faa-s-acs-7b",
+  "title": "FlytWERX ACS Maneuver Standards Checker Data",
+  "certificate": {
+    "id": "commercial-pilot",
+    "label": "Commercial Pilot",
+    "category": "Airplane",
+    "class": "ASEL"
+  },
+  "acs": {
+    "documentNumber": "FAA-S-ACS-7B",
+    "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+    "status": "Effective May 31, 2024",
+    "officialUrl": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+    "verifiedAgainstFAA": "2026-08-19"
+  },
+  "ui": {
+    "categories": [
+      {
+        "id": "takeoffs",
+        "label": "Takeoffs",
+        "order": 1
+      },
+      {
+        "id": "landings",
+        "label": "Landings",
+        "order": 2
+      },
+      {
+        "id": "performance-maneuvers",
+        "label": "Performance Maneuvers",
+        "order": 3
+      },
+      {
+        "id": "stalls",
+        "label": "Slow Flight and Stalls",
+        "order": 4
+      },
+      {
+        "id": "emergency-operations",
+        "label": "Emergency Operations",
+        "order": 5
+      }
+    ],
+    "maneuverOrder": {
+      "takeoffs": [
+        "normal-takeoff",
+        "crosswind-takeoff",
+        "soft-field-takeoff",
+        "short-field-takeoff"
+      ],
+      "landings": [
+        "normal-landing",
+        "crosswind-landing",
+        "soft-field-landing",
+        "short-field-landing",
+        "power-off-180-landing",
+        "go-around"
+      ],
+      "performance-maneuvers": [
+        "steep-turns",
+        "steep-spiral",
+        "chandelle",
+        "lazy-eights",
+        "eights-on-pylons"
+      ],
+      "stalls": [
+        "slow-flight",
+        "power-off-stall",
+        "power-on-stall",
+        "accelerated-stall"
+      ],
+      "emergency-operations": [
+        "emergency-descent",
+        "emergency-approach-and-landing"
+      ]
+    }
+  },
+  "page": {
+    "disclaimer": "This checker summarizes selected FAA ACS performance standards for training and debrief use. Always use the current official FAA ACS and the applicable POH/AFM. FlytWERX data supports review and does not replace evaluator judgment or approved aircraft indications.",
+    "maxMetricCards": 4,
+    "maxCriteriaItems": 6,
+    "maxReviewItems": 6
+  },
+  "maneuvers": {
+    "normal-takeoff": {
+      "name": "Normal Takeoff",
+      "category": "takeoffs",
+      "acsTask": "CA.IV.A",
+      "objective": "Normal takeoff and climb operations.",
+      "metrics": [
+        {
+          "label": "Climb Airspeed",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain the manufacturer-recommended climb speed or VY.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "VY to Safe Altitude",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain VY to a safe maneuvering altitude.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Directional Control",
+          "value": "Maintain",
+          "unit": "",
+          "description": "Maintain directional control and wind-drift correction.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Configuration",
+          "value": "POH/AFM",
+          "unit": "",
+          "description": "Use manufacturer-recommended configuration and procedures.",
+          "note": "Aircraft-specific.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Complete appropriate checklist, runway verification, traffic scan, and radio calls.",
+        "Position controls for existing wind and align with runway centerline.",
+        "Apply takeoff power smoothly and verify proper indications.",
+        "Rotate at the recommended airspeed and establish the recommended climb speed or VY within ±5 knots.",
+        "Maintain directional control and wind correction during climb.",
+        "Maintain VY within ±5 knots to a safe maneuvering altitude."
+      ],
+      "reviewVariables": [
+        {
+          "label": "CENTERLINE",
+          "text": "Review directional control through liftoff."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review climb-speed capture and stability."
+        },
+        {
+          "label": "POWER",
+          "text": "Review power application and indications."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind correction."
+        },
+        {
+          "label": "ROTATION",
+          "text": "Review rotation timing and smoothness."
+        },
+        {
+          "label": "CLIMB",
+          "text": "Review climb stability and configuration."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.A",
+        "taskName": "Normal Takeoff and Climb",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "crosswind-takeoff": {
+      "name": "Crosswind Takeoff",
+      "category": "takeoffs",
+      "acsTask": "CA.IV.A",
+      "aliasOf": "normal-takeoff",
+      "displayNote": "The Commercial Pilot ACS does not create a separate crosswind-takeoff task; wind correction and directional control are evaluated within the applicable takeoff task.",
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.A",
+        "taskName": "Normal Takeoff and Climb",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "soft-field-takeoff": {
+      "name": "Soft-Field Takeoff",
+      "category": "takeoffs",
+      "acsTask": "CA.IV.C",
+      "objective": "Soft-field takeoff and climb.",
+      "metrics": [
+        {
+          "label": "VX / VY",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Establish and maintain VX or VY as appropriate.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Ground Effect",
+          "value": "Required",
+          "unit": "",
+          "description": "Lift off at the lowest practical airspeed and remain in ground effect while accelerating.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "VY to Safe Altitude",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain VY to a safe maneuvering altitude.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        }
+      ],
+      "criteria": [
+        "Use appropriate soft-field control positioning and minimize wheel loading.",
+        "Apply takeoff power smoothly while maintaining directional control.",
+        "Lift off at the lowest practical airspeed and remain in ground effect while accelerating.",
+        "Establish VX or VY as appropriate and maintain it within ±5 knots.",
+        "Retract gear/flaps in accordance with POH/AFM and a positive rate of climb.",
+        "Maintain VY within ±5 knots to a safe maneuvering altitude."
+      ],
+      "reviewVariables": [
+        {
+          "label": "GROUND ROLL",
+          "text": "Review wheel-loading reduction and directional control."
+        },
+        {
+          "label": "LIFT-OFF",
+          "text": "Review liftoff timing and pitch."
+        },
+        {
+          "label": "GROUND EFFECT",
+          "text": "Review acceleration while remaining in ground effect."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review VX/VY control."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review flap/gear timing."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind correction."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.C",
+        "taskName": "Soft-Field Takeoff and Climb (ASEL)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "short-field-takeoff": {
+      "name": "Short-Field Takeoff",
+      "category": "takeoffs",
+      "acsTask": "CA.IV.E",
+      "objective": "Short-field takeoff and maximum-performance climb.",
+      "metrics": [
+        {
+          "label": "Obstacle / VX",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain recommended obstacle-clearance airspeed or VX.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "VY",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Accelerate to and maintain VY after obstacle clearance or 50 feet AGL when simulated.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Takeoff Area",
+          "value": "Maximum",
+          "unit": "",
+          "description": "Use the maximum available takeoff area.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Obstacle Transition",
+          "value": "50",
+          "unit": "FT AGL",
+          "description": "Transition after obstacle clearance or 50 feet AGL when simulated.",
+          "note": "ACS reference.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Use the maximum available takeoff area and appropriate short-field configuration.",
+        "Set takeoff power and verify proper indications.",
+        "Rotate at the recommended airspeed.",
+        "Establish and maintain obstacle-clearance airspeed or VX within ±5 knots.",
+        "After obstacle clearance or 50 feet AGL when simulated, accelerate to VY within ±5 knots.",
+        "Maintain VY within ±5 knots to a safe maneuvering altitude."
+      ],
+      "reviewVariables": [
+        {
+          "label": "RUNWAY USE",
+          "text": "Review use of available takeoff distance."
+        },
+        {
+          "label": "POWER",
+          "text": "Review power stabilization before/brake release."
+        },
+        {
+          "label": "VX",
+          "text": "Review obstacle-clearance airspeed."
+        },
+        {
+          "label": "TRANSITION",
+          "text": "Review transition from VX to VY."
+        },
+        {
+          "label": "CENTERLINE",
+          "text": "Review directional control."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review configuration timing."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.E",
+        "taskName": "Short-Field Takeoff and Maximum Performance Climb (ASEL, AMEL)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "normal-landing": {
+      "name": "Normal Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.B",
+      "objective": "Normal approach and landing.",
+      "metrics": [
+        {
+          "label": "Approach Airspeed",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain published approach airspeed or ACS fallback with gust factor as applicable.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Touchdown",
+          "value": "0 to +200",
+          "unit": "FT",
+          "description": "Touch down on or within 200 feet beyond the specified point.",
+          "note": "ACS touchdown window.",
+          "showVisual": true,
+          "rangeMinLabel": "POINT",
+          "rangeMaxLabel": "+200 FT",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Side Drift",
+          "value": "None",
+          "unit": "",
+          "description": "Touch down with no side drift.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Alignment",
+          "value": "Centerline",
+          "unit": "",
+          "description": "Maintain runway alignment and directional control.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Complete checklist, runway verification, traffic scan, and radio calls.",
+        "Establish the recommended configuration and a stabilized approach.",
+        "Maintain published approach airspeed within ±5 knots with gust factor as applicable.",
+        "Maintain directional control and appropriate crosswind correction.",
+        "Touch down within 200 feet beyond or on the specified point with no side drift.",
+        "Execute a timely go-around if the approach cannot be completed within tolerance or safely."
+      ],
+      "reviewVariables": [
+        {
+          "label": "AIRSPEED",
+          "text": "Review final-approach speed trend."
+        },
+        {
+          "label": "PATH",
+          "text": "Review approach stability."
+        },
+        {
+          "label": "CENTERLINE",
+          "text": "Review alignment and drift."
+        },
+        {
+          "label": "TOUCHDOWN",
+          "text": "Review touchdown location against the 200-foot window."
+        },
+        {
+          "label": "WIND",
+          "text": "Review crosswind correction."
+        },
+        {
+          "label": "GO-AROUND",
+          "text": "Review go-around decision-making."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.B",
+        "taskName": "Normal Approach and Landing",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "crosswind-landing": {
+      "name": "Crosswind Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.B",
+      "aliasOf": "normal-landing",
+      "displayNote": "The Commercial Pilot ACS does not create a separate crosswind-landing task; crosswind correction is evaluated within the applicable landing task.",
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.B",
+        "taskName": "Normal Approach and Landing",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "soft-field-landing": {
+      "name": "Soft-Field Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.D",
+      "objective": "Soft-field approach and landing.",
+      "metrics": [
+        {
+          "label": "Approach Airspeed",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain published approach airspeed or ACS fallback with gust factor as applicable.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Sink Rate",
+          "value": "Minimum",
+          "unit": "",
+          "description": "Touch down at minimum practical sink rate with proper pitch attitude.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Side Drift",
+          "value": "None",
+          "unit": "",
+          "description": "Touch down with no side drift.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Establish a stabilized soft-field approach with appropriate configuration.",
+        "Maintain published approach airspeed within ±5 knots with gust factor as applicable.",
+        "Maintain directional control and crosswind correction.",
+        "Touch down softly at a proper pitch attitude with minimum sink rate and no side drift.",
+        "Maintain appropriate elevator/control position to minimize wheel loading during rollout.",
+        "Execute a go-around if the approach becomes unsafe or unstable."
+      ],
+      "reviewVariables": [
+        {
+          "label": "AIRSPEED",
+          "text": "Review approach-speed stability."
+        },
+        {
+          "label": "SINK RATE",
+          "text": "Review vertical-speed trend near touchdown."
+        },
+        {
+          "label": "PITCH",
+          "text": "Review roundout and touchdown attitude."
+        },
+        {
+          "label": "CENTERLINE",
+          "text": "Review drift and alignment."
+        },
+        {
+          "label": "ROLLOUT",
+          "text": "Review wheel loading and directional control."
+        },
+        {
+          "label": "GO-AROUND",
+          "text": "Review unstable-approach decision."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.D",
+        "taskName": "Soft-Field Approach and Landing (ASEL)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "short-field-landing": {
+      "name": "Short-Field Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.F",
+      "objective": "Short-field approach and landing.",
+      "metrics": [
+        {
+          "label": "Approach Airspeed",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain published approach airspeed or ACS fallback with gust factor as applicable.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Touchdown",
+          "value": "0 to +100",
+          "unit": "FT",
+          "description": "Touch down on or within 100 feet beyond the specified point, threshold markings, or runway numbers.",
+          "note": "ACS touchdown window.",
+          "showVisual": true,
+          "rangeMinLabel": "POINT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Side Drift",
+          "value": "None",
+          "unit": "",
+          "description": "Touch down with no side drift and proper alignment.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Braking",
+          "value": "Maximum safe",
+          "unit": "",
+          "description": "Use appropriate braking and aerodynamic control consistent with POH/AFM.",
+          "note": "Procedure-specific.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Establish a stabilized short-field approach using appropriate configuration.",
+        "Maintain published approach airspeed within ±5 knots with gust factor as applicable.",
+        "Maintain directional control and crosswind correction.",
+        "Touch down within 100 feet beyond or on the specified point with minimum float and no side drift.",
+        "Use appropriate braking and control inputs after touchdown.",
+        "Execute a timely go-around if the approach cannot be completed within tolerance or safely."
+      ],
+      "reviewVariables": [
+        {
+          "label": "AIRSPEED",
+          "text": "Review final-approach speed."
+        },
+        {
+          "label": "TOUCHDOWN",
+          "text": "Review touchdown location against the 100-foot window."
+        },
+        {
+          "label": "FLOAT",
+          "text": "Review excess-energy management."
+        },
+        {
+          "label": "CENTERLINE",
+          "text": "Review alignment and drift."
+        },
+        {
+          "label": "BRAKING",
+          "text": "Review deceleration and directional control."
+        },
+        {
+          "label": "GO-AROUND",
+          "text": "Review go-around decision."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.F",
+        "taskName": "Short-Field Approach and Landing (ASEL, AMEL)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "power-off-180-landing": {
+      "name": "Power-Off 180° Accuracy Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.M",
+      "objective": "Power-off 180-degree accuracy approach and landing.",
+      "metrics": [
+        {
+          "label": "Touchdown",
+          "value": "0 to +200",
+          "unit": "FT",
+          "description": "Touch down on or within 200 feet beyond the specified point.",
+          "note": "ACS touchdown window.",
+          "showVisual": true,
+          "rangeMinLabel": "POINT",
+          "rangeMaxLabel": "+200 FT",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Power",
+          "value": "Idle",
+          "unit": "",
+          "description": "Complete the maneuver power-off after the designated point.",
+          "note": "Task-specific standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Energy",
+          "value": "Manage",
+          "unit": "",
+          "description": "Use pitch, configuration, and ground track to manage energy to the selected point.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Position the airplane appropriately for a power-off 180-degree accuracy approach.",
+        "Close the throttle at the designated point and establish the appropriate glide.",
+        "Plan the ground track and use configuration changes to manage energy.",
+        "Maintain coordinated flight and appropriate wind correction.",
+        "Touch down at a proper pitch attitude within 200 feet beyond or on the specified point with no side drift.",
+        "Maintain directional control through rollout."
+      ],
+      "reviewVariables": [
+        {
+          "label": "GLIDE",
+          "text": "Review glidepath and energy state after power reduction."
+        },
+        {
+          "label": "GROUND TRACK",
+          "text": "Review pattern geometry and wind correction."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review flap/gear timing."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed trend."
+        },
+        {
+          "label": "TOUCHDOWN",
+          "text": "Review touchdown point against the 200-foot window."
+        },
+        {
+          "label": "CENTERLINE",
+          "text": "Review alignment and side drift."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.M",
+        "taskName": "Power-Off 180° Accuracy Approach and Landing (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "go-around": {
+      "name": "Go-Around / Rejected Landing",
+      "category": "landings",
+      "acsTask": "CA.IV.N",
+      "objective": "Execute a go-around or rejected landing.",
+      "metrics": [
+        {
+          "label": "VX / VY",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Transition to the appropriate climb speed.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "VY to Safe Altitude",
+          "value": "±5",
+          "unit": "KTS",
+          "description": "Maintain VY to a safe maneuvering altitude.",
+          "note": "ACS tolerance: ±5 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-5 KTS",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "Climb",
+          "value": "Positive",
+          "unit": "RATE",
+          "description": "Establish a positive climb before configuration changes as appropriate.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Apply takeoff power immediately and establish the appropriate climb pitch.",
+        "Maintain VX or VY as appropriate within ±5 knots.",
+        "Retract flaps/gear in accordance with POH/AFM and a positive rate of climb.",
+        "Maintain directional control and wind correction.",
+        "Communicate as appropriate and complete checklist items.",
+        "Maintain VY within ±5 knots to a safe maneuvering altitude."
+      ],
+      "reviewVariables": [
+        {
+          "label": "DECISION",
+          "text": "Review timing of the go-around decision."
+        },
+        {
+          "label": "POWER",
+          "text": "Review power application."
+        },
+        {
+          "label": "PITCH",
+          "text": "Review transition to climb attitude."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review flap/gear retraction sequence."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review VX/VY control."
+        },
+        {
+          "label": "DIRECTION",
+          "text": "Review directional control and track."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IV.N",
+        "taskName": "Go-Around/Rejected Landing",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "steep-turns": {
+      "name": "Steep Turns",
+      "category": "performance-maneuvers",
+      "acsTask": "CA.V.A",
+      "objective": "Perform coordinated commercial steep turns.",
+      "metrics": [
+        {
+          "label": "Bank",
+          "value": "50 ±5",
+          "unit": "DEG",
+          "description": "Maintain approximately 50 degrees of bank within tolerance.",
+          "note": "ACS target approximately 50°, tolerance ±5°.",
+          "showVisual": true,
+          "rangeMinLabel": "45°",
+          "rangeMaxLabel": "55°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain entry altitude.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain entry airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Rollout Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Roll out on the entry heading.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Clear the area and establish the specified entry airspeed and altitude.",
+        "Roll into a coordinated 360-degree turn with approximately 50 degrees of bank.",
+        "Maintain coordinated flight and appropriate division of attention.",
+        "Maintain entry altitude ±100 feet, airspeed ±10 knots, and bank ±5 degrees.",
+        "Complete the turn and roll out on the entry heading ±10 degrees.",
+        "Repeat in the opposite direction as required."
+      ],
+      "reviewVariables": [
+        {
+          "label": "BANK",
+          "text": "Review bank-angle stability."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude control through the turn."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed and power management."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review slip/skid trend."
+        },
+        {
+          "label": "ROLLOUT",
+          "text": "Review rollout timing and heading."
+        },
+        {
+          "label": "SCAN",
+          "text": "Review outside/inside attention management."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.V.A",
+        "taskName": "Steep Turns",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "steep-spiral": {
+      "name": "Steep Spiral",
+      "category": "performance-maneuvers",
+      "acsTask": "CA.V.B",
+      "objective": "Perform a steep spiral around a selected ground reference.",
+      "metrics": [
+        {
+          "label": "Bank",
+          "value": "≤60",
+          "unit": "DEG",
+          "description": "Use bank as needed for wind while not exceeding 60 degrees.",
+          "note": "ACS maximum bank: 60°.",
+          "showVisual": false
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain the specified airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Rollout Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Roll out toward the selected object or specified heading.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Select a suitable ground reference and clear the area.",
+        "Establish and maintain a steep spiral with bank not exceeding 60 degrees.",
+        "Apply wind correction to maintain a constant radius around the selected reference.",
+        "Maintain coordinated flight and the specified airspeed within ±10 knots.",
+        "Complete the required turns while managing altitude and engine cooling as appropriate.",
+        "Roll out toward the selected object or specified heading within ±10 degrees."
+      ],
+      "reviewVariables": [
+        {
+          "label": "RADIUS",
+          "text": "Review ground-track radius around the reference."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank changes with wind."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed stability."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review slip/skid trend."
+        },
+        {
+          "label": "ENGINE",
+          "text": "Review power/cooling management."
+        },
+        {
+          "label": "ROLLOUT",
+          "text": "Review rollout heading."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.V.B",
+        "taskName": "Steep Spiral (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "chandelle": {
+      "name": "Chandelle",
+      "category": "performance-maneuvers",
+      "acsTask": "CA.V.C",
+      "objective": "Perform a chandelle with maximum performance and coordinated control.",
+      "metrics": [
+        {
+          "label": "Maximum Bank",
+          "value": "≈30",
+          "unit": "DEG",
+          "description": "Establish approximately 30 degrees of bank during the first 90 degrees of turn.",
+          "note": "ACS approximate target.",
+          "showVisual": false
+        },
+        {
+          "label": "Rollout Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Complete rollout at the 180-degree point.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Final Airspeed",
+          "value": "Just above stall",
+          "unit": "",
+          "description": "Finish at the minimum controllable airspeed appropriate to the maneuver, just above stall.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Clear the area and establish the recommended entry configuration, airspeed, and power.",
+        "Begin a coordinated climbing turn and establish approximately 30 degrees of bank.",
+        "During the first 90 degrees, increase pitch while maintaining bank.",
+        "During the second 90 degrees, hold pitch while smoothly decreasing bank.",
+        "Complete rollout at the 180-degree point within ±10 degrees.",
+        "Finish just above stall airspeed while maintaining coordinated flight."
+      ],
+      "reviewVariables": [
+        {
+          "label": "PITCH",
+          "text": "Review continuous pitch increase in the first half."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank profile and rollout."
+        },
+        {
+          "label": "ENERGY",
+          "text": "Review airspeed decay and power use."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review rudder coordination."
+        },
+        {
+          "label": "90° POINT",
+          "text": "Review pitch/bank transition at 90 degrees."
+        },
+        {
+          "label": "180° POINT",
+          "text": "Review rollout heading and final airspeed."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.V.C",
+        "taskName": "Chandelles (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "lazy-eights": {
+      "name": "Lazy Eights",
+      "category": "performance-maneuvers",
+      "acsTask": "CA.V.D",
+      "objective": "Perform coordinated lazy eights with smooth continuously changing pitch and bank.",
+      "metrics": [
+        {
+          "label": "Maximum Bank",
+          "value": "≈30",
+          "unit": "DEG",
+          "description": "Reach approximately 30 degrees of bank at the steepest point.",
+          "note": "ACS approximate target.",
+          "showVisual": false
+        },
+        {
+          "label": "Altitude at 180°",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Return to entry altitude at each 180-degree point.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed at 180°",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Return to entry airspeed at each 180-degree point.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading at 180°",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Reach the planned 180-degree heading.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Clear the area and select suitable visual references.",
+        "Use smooth, continuous, coordinated changes in pitch and bank.",
+        "Reach the required pitch/bank relationships at the 45-, 90-, and 135-degree points.",
+        "Reach approximately 30 degrees of bank at the steepest point.",
+        "At each 180-degree point, return to entry altitude ±100 feet and airspeed ±10 knots.",
+        "Reach the planned heading at each 180-degree point within ±10 degrees."
+      ],
+      "reviewVariables": [
+        {
+          "label": "SMOOTHNESS",
+          "text": "Review continuity of pitch and bank changes."
+        },
+        {
+          "label": "45° POINT",
+          "text": "Review pitch/bank relationship."
+        },
+        {
+          "label": "90° POINT",
+          "text": "Review maximum pitch/minimum airspeed relationship."
+        },
+        {
+          "label": "135° POINT",
+          "text": "Review descent and bank trend."
+        },
+        {
+          "label": "180° ALTITUDE",
+          "text": "Review altitude and airspeed recovery."
+        },
+        {
+          "label": "HEADING",
+          "text": "Review heading accuracy at each half-cycle."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.V.D",
+        "taskName": "Lazy Eights (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "eights-on-pylons": {
+      "name": "Eights on Pylons",
+      "category": "performance-maneuvers",
+      "acsTask": "CA.V.E",
+      "objective": "Perform eights on pylons using pivotal altitude and wind correction.",
+      "metrics": [
+        {
+          "label": "Bank",
+          "value": "≤40",
+          "unit": "DEG",
+          "description": "Use the correct bank angle for conditions, not exceeding 40 degrees.",
+          "note": "ACS maximum bank: 40°.",
+          "showVisual": false
+        },
+        {
+          "label": "Pivotal Altitude",
+          "value": "Maintain",
+          "unit": "",
+          "description": "Adjust altitude as required to keep the pylon visually stationary relative to the wing reference.",
+          "note": "Performance-based standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Select suitable pylons and an entry that accounts for wind.",
+        "Enter at the appropriate pivotal altitude and ground track.",
+        "Apply coordinated pitch and bank changes to keep each pylon on the selected visual reference.",
+        "Correct for wind while maintaining the appropriate pivotal relationship.",
+        "Use bank appropriate for conditions and not exceeding 40 degrees.",
+        "Transition smoothly between pylons while maintaining situational awareness and clearance."
+      ],
+      "reviewVariables": [
+        {
+          "label": "PYLON 1",
+          "text": "Review pivotal relationship around the first pylon."
+        },
+        {
+          "label": "TRANSITION",
+          "text": "Review ground track between pylons."
+        },
+        {
+          "label": "PYLON 2",
+          "text": "Review pivotal relationship around the second pylon."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude changes with groundspeed."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank angle and wind correction."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review coordinated control throughout."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.V.E",
+        "taskName": "Eights on Pylons (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "slow-flight": {
+      "name": "Maneuvering During Slow Flight",
+      "category": "stalls",
+      "acsTask": "CA.VII.A",
+      "objective": "Maneuver at slow speed while maintaining precise aircraft control.",
+      "metrics": [
+        {
+          "label": "Altitude",
+          "value": "±50",
+          "unit": "FT",
+          "description": "Maintain specified altitude.",
+          "note": "ACS tolerance: ±50 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-50 FT",
+          "rangeMaxLabel": "+50 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain specified heading.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "+5 / -0",
+          "unit": "KTS",
+          "description": "Maintain the specified slow-flight airspeed.",
+          "note": "ACS tolerance: +5/-0 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "TARGET",
+          "rangeMaxLabel": "+5 KTS",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Bank",
+          "value": "±5",
+          "unit": "DEG",
+          "description": "Maintain specified angle of bank.",
+          "note": "ACS tolerance: ±5°",
+          "showVisual": true,
+          "rangeMinLabel": "-5°",
+          "rangeMaxLabel": "+5°",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        }
+      ],
+      "criteria": [
+        "Clear the area and establish the specified configuration.",
+        "Establish an airspeed that results in the required slow-flight condition without activating a stall warning.",
+        "Maintain coordinated flight while performing specified straight-and-level flight, turns, climbs, or descents.",
+        "Maintain altitude ±50 feet and heading ±10 degrees.",
+        "Maintain airspeed +5/-0 knots and specified bank ±5 degrees.",
+        "Recover to normal flight as directed while maintaining control."
+      ],
+      "reviewVariables": [
+        {
+          "label": "AIRSPEED",
+          "text": "Review precision near the slow-flight target."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude control."
+        },
+        {
+          "label": "HEADING",
+          "text": "Review heading control."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank precision."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review slip/skid trend."
+        },
+        {
+          "label": "RECOVERY",
+          "text": "Review transition back to normal flight."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.VII.A",
+        "taskName": "Maneuvering During Slow Flight",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "power-off-stall": {
+      "name": "Power-Off Stall",
+      "category": "stalls",
+      "acsTask": "CA.VII.B",
+      "objective": "Demonstrate recognition and recovery from a power-off stall.",
+      "metrics": [
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain specified heading if performed in straight flight.",
+          "note": "ACS tolerance: ±10°.",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Bank",
+          "value": "≤20 ±5",
+          "unit": "DEG",
+          "description": "If turning, maintain specified bank not exceeding 20 degrees, within ±5 degrees.",
+          "note": "ACS bank standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Recovery",
+          "value": "Prompt",
+          "unit": "",
+          "description": "Recover at the first indication or after a full stall as specified by the evaluator.",
+          "note": "Task-specific standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Clear the area and select an altitude that permits safe completion.",
+        "Configure for the specified approach/landing condition and establish coordinated flight.",
+        "Transition smoothly to the pitch attitude that induces the stall.",
+        "Maintain specified heading ±10 degrees or specified bank not exceeding 20 degrees within ±5 degrees.",
+        "Recognize stall cues and recover as specified by the evaluator using appropriate procedures.",
+        "Configure for climb and return to the altitude, heading, and airspeed specified by the evaluator."
+      ],
+      "reviewVariables": [
+        {
+          "label": "ENTRY",
+          "text": "Review configuration and energy before stall entry."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review yaw control during deceleration."
+        },
+        {
+          "label": "STALL CUE",
+          "text": "Review recognition of impending/full-stall cues."
+        },
+        {
+          "label": "RECOVERY",
+          "text": "Review angle-of-attack reduction and power use."
+        },
+        {
+          "label": "HEADING/BANK",
+          "text": "Review directional control."
+        },
+        {
+          "label": "CLIMB",
+          "text": "Review return to normal climb configuration."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.VII.B",
+        "taskName": "Power-Off Stalls",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "power-on-stall": {
+      "name": "Power-On Stall",
+      "category": "stalls",
+      "acsTask": "CA.VII.C",
+      "objective": "Demonstrate recognition and recovery from a power-on stall.",
+      "metrics": [
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain specified heading if performed in straight flight.",
+          "note": "ACS tolerance: ±10°.",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Bank",
+          "value": "≤20 ±10",
+          "unit": "DEG",
+          "description": "If turning, maintain specified bank not exceeding 20 degrees within ±10 degrees.",
+          "note": "ACS bank standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Power",
+          "value": "≥65",
+          "unit": "PERCENT",
+          "description": "Use no less than 65 percent power for the maneuver.",
+          "note": "ACS minimum power setting.",
+          "showVisual": false
+        },
+        {
+          "label": "Recovery",
+          "value": "Prompt",
+          "unit": "",
+          "description": "Recover at the first indication or after a full stall as specified by the evaluator.",
+          "note": "Task-specific standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Clear the area and select an altitude that permits safe completion.",
+        "Establish the takeoff, departure, or cruise configuration specified by the evaluator.",
+        "Set power to no less than 65 percent.",
+        "Transition smoothly to the pitch attitude that induces the stall while maintaining coordinated flight.",
+        "Maintain specified heading ±10 degrees or turning-bank requirement until the stall occurs.",
+        "Recognize stall cues, recover as specified, configure for climb, and return to the evaluator-specified altitude, heading, and airspeed."
+      ],
+      "reviewVariables": [
+        {
+          "label": "POWER",
+          "text": "Review power setting and pitch entry."
+        },
+        {
+          "label": "COORDINATION",
+          "text": "Review yaw control."
+        },
+        {
+          "label": "STALL CUE",
+          "text": "Review stall recognition."
+        },
+        {
+          "label": "RECOVERY",
+          "text": "Review recovery sequence."
+        },
+        {
+          "label": "HEADING/BANK",
+          "text": "Review directional control."
+        },
+        {
+          "label": "CLIMB",
+          "text": "Review return to climb configuration."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.VII.C",
+        "taskName": "Power-On Stalls",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "accelerated-stall": {
+      "name": "Accelerated Stall",
+      "category": "stalls",
+      "acsTask": "CA.VII.D",
+      "objective": "Demonstrate recognition and recovery from an accelerated stall.",
+      "metrics": [
+        {
+          "label": "Bank",
+          "value": "45",
+          "unit": "DEG",
+          "description": "Establish and maintain a coordinated turn in a 45-degree bank.",
+          "note": "ACS target bank: 45°.",
+          "showVisual": false
+        },
+        {
+          "label": "Entry Altitude",
+          "value": "≥3000",
+          "unit": "FT AGL",
+          "description": "Select an entry altitude allowing completion no lower than 3,000 feet AGL.",
+          "note": "ACS minimum completion altitude.",
+          "showVisual": false
+        },
+        {
+          "label": "Airspeed",
+          "value": "≤ VA",
+          "unit": "",
+          "description": "Do not exceed maneuvering speed or other applicable POH/AFM limitation.",
+          "note": "Aircraft limitation.",
+          "showVisual": false
+        },
+        {
+          "label": "Recovery",
+          "value": "POH/AFM",
+          "unit": "",
+          "description": "Execute stall recovery using the aircraft procedure.",
+          "note": "ACS requires POH/AFM-compliant recovery.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Clear the area and select an entry altitude allowing completion no lower than 3,000 feet AGL.",
+        "Establish the configuration specified by the evaluator and remain within applicable speed limitations.",
+        "Establish and maintain a coordinated 45-degree bank turn.",
+        "Increase elevator back pressure smoothly until an impending stall occurs.",
+        "Recognize the stall cues and execute the appropriate recovery.",
+        "Configure for climb and return to the altitude, heading, and airspeed specified by the evaluator."
+      ],
+      "reviewVariables": [
+        {
+          "label": "ENTRY ALTITUDE",
+          "text": "Confirm minimum completion altitude."
+        },
+        {
+          "label": "BANK",
+          "text": "Review 45-degree-bank coordination."
+        },
+        {
+          "label": "STALL CUE",
+          "text": "Review recognition timing."
+        },
+        {
+          "label": "RECOVERY",
+          "text": "Review prompt angle-of-attack reduction."
+        },
+        {
+          "label": "LIMITS",
+          "text": "Confirm VA/POH limitations were respected."
+        },
+        {
+          "label": "STABILIZATION",
+          "text": "Review return to normal flight."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.VII.D",
+        "taskName": "Accelerated Stalls",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "emergency-descent": {
+      "name": "Emergency Descent",
+      "category": "emergency-operations",
+      "acsTask": "CA.IX.A",
+      "objective": "Perform an emergency descent appropriate to the scenario and aircraft.",
+      "metrics": [
+        {
+          "label": "Bank",
+          "value": "30–45",
+          "unit": "DEG",
+          "description": "Use bank between 30 and 45 degrees to maintain positive load factors during descent.",
+          "note": "ACS bank range.",
+          "showVisual": true,
+          "rangeMinLabel": "30°",
+          "rangeMaxLabel": "45°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "+0 / -10",
+          "unit": "KTS",
+          "description": "Maintain the appropriate emergency-descent airspeed.",
+          "note": "ACS tolerance: +0/-10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "TARGET",
+          "rangeStart": 25,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Level-Off Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Level off at the specified altitude.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Configuration",
+          "value": "Scenario / POH",
+          "unit": "",
+          "description": "Use the configuration and procedures appropriate to the aircraft and scenario.",
+          "note": "POH/AFM dependent.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Clear the area and establish the airspeed/configuration appropriate to the scenario and POH/AFM.",
+        "Maintain orientation and divide attention appropriately.",
+        "Use 30 to 45 degrees of bank during the descent.",
+        "Maintain the appropriate airspeed +0/-10 knots.",
+        "Level off at the specified altitude within ±100 feet.",
+        "Complete appropriate checklist items and maintain situational awareness."
+      ],
+      "reviewVariables": [
+        {
+          "label": "BANK",
+          "text": "Review bank angle during descent."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review speed against the emergency-descent target."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review level-off anticipation and accuracy."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review POH/AFM procedure compliance."
+        },
+        {
+          "label": "ORIENTATION",
+          "text": "Review situational awareness and traffic/terrain considerations."
+        },
+        {
+          "label": "RECOVERY",
+          "text": "Review smooth transition to level flight."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IX.A",
+        "taskName": "Emergency Descent",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "emergency-approach-and-landing": {
+      "name": "Emergency Approach and Landing",
+      "category": "emergency-operations",
+      "acsTask": "CA.IX.B",
+      "objective": "Plan and execute a simulated emergency approach and landing.",
+      "metrics": [
+        {
+          "label": "Best Glide",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Establish and maintain the recommended best-glide airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Landing Area",
+          "value": "Suitable",
+          "unit": "",
+          "description": "Select a suitable landing area considering altitude, wind, terrain, obstructions, and glide distance.",
+          "note": "Scenario-based standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Configuration",
+          "value": "POH/AFM",
+          "unit": "",
+          "description": "Configure the airplane in accordance with POH/AFM and existing conditions.",
+          "note": "Aircraft-specific standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Establish and maintain recommended best-glide airspeed within ±10 knots.",
+        "Configure the airplane in accordance with POH/AFM and existing conditions.",
+        "Select a suitable landing area considering altitude, wind, terrain, obstructions, and glide distance.",
+        "Plan and follow a flightpath to the selected landing area.",
+        "Prepare for landing as specified by the evaluator.",
+        "Complete appropriate emergency checklist items."
+      ],
+      "reviewVariables": [
+        {
+          "label": "BEST GLIDE",
+          "text": "Review capture and stability of best-glide speed."
+        },
+        {
+          "label": "SITE",
+          "text": "Review landing-area selection."
+        },
+        {
+          "label": "GLIDEPATH",
+          "text": "Review energy management to the selected area."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind effect on glide and pattern."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review POH/AFM configuration decisions."
+        },
+        {
+          "label": "CHECKLIST",
+          "text": "Review emergency checklist and task prioritization."
+        }
+      ],
+      "source": {
+        "documentTitle": "Commercial Pilot for Airplane Category Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-7B",
+        "areaTask": "CA.IX.B",
+        "taskName": "Emergency Approach and Landing (Simulated) (ASEL, ASES)",
+        "url": "https://www.faa.gov/training_testing/testing/acs/commercial_airplane_acs_7.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    }
+  }
+}

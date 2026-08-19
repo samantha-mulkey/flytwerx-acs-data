@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "instrument-rating-airplane-faa-s-acs-8c",
+  "title": "FlytWERX ACS Maneuver Standards Checker Data",
+  "certificate": {
+    "id": "instrument-rating",
+    "label": "Instrument Rating",
+    "category": "Airplane",
+    "class": "Airplane"
+  },
+  "acs": {
+    "documentNumber": "FAA-S-ACS-8C",
+    "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+    "status": "Effective May 31, 2024",
+    "officialUrl": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+    "verifiedAgainstFAA": "2026-08-19"
+  },
+  "ui": {
+    "categories": [
+      {
+        "id": "atc-procedures",
+        "label": "ATC Procedures",
+        "order": 1
+      },
+      {
+        "id": "instrument-flight",
+        "label": "Instrument Flight",
+        "order": 2
+      },
+      {
+        "id": "navigation",
+        "label": "Navigation Systems",
+        "order": 3
+      },
+      {
+        "id": "approaches",
+        "label": "Instrument Approaches",
+        "order": 4
+      },
+      {
+        "id": "emergency-operations",
+        "label": "Emergency Operations",
+        "order": 5
+      }
+    ],
+    "maneuverOrder": {
+      "atc-procedures": [
+        "holding-procedures"
+      ],
+      "instrument-flight": [
+        "instrument-flight",
+        "unusual-attitude-recovery"
+      ],
+      "navigation": [
+        "intercepting-tracking",
+        "departure-enroute-arrival"
+      ],
+      "approaches": [
+        "nonprecision-approach",
+        "precision-approach",
+        "missed-approach",
+        "circling-approach",
+        "landing-from-instrument-approach"
+      ],
+      "emergency-operations": [
+        "loss-of-communications",
+        "approach-loss-primary-instruments"
+      ]
+    }
+  },
+  "page": {
+    "disclaimer": "This checker summarizes selected FAA ACS performance standards for training and debrief use. Always use the current official FAA ACS and the applicable POH/AFM. FlytWERX data supports review and does not replace evaluator judgment or approved aircraft indications.",
+    "maxMetricCards": 4,
+    "maxCriteriaItems": 6,
+    "maxReviewItems": 6
+  },
+  "maneuvers": {
+    "holding-procedures": {
+      "name": "Holding Procedures",
+      "category": "atc-procedures",
+      "acsTask": "IR.III.B",
+      "objective": "Holding procedures solely by reference to instruments.",
+      "metrics": [
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain the assigned or selected altitude within ACS tolerance.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain the applicable or selected airspeed within ACS tolerance.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain selected headings within ACS tolerance.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Course Tracking",
+          "value": "≤ 3/4",
+          "unit": "SCALE CDI",
+          "description": "Track the selected course, radial, or bearing within three-quarter-scale CDI deflection.",
+          "note": "ACS tracking limit.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Use an appropriate entry for the assigned standard, nonstandard, published, or non-published hold.",
+        "Reduce to the holding airspeed appropriate for altitude before reaching the fix.",
+        "Recognize the holding fix and promptly initiate the entry.",
+        "Comply with leg-length and other published or assigned restrictions.",
+        "Apply wind correction to maintain the desired holding pattern.",
+        "Comply with ATC reporting requirements and restrictions."
+      ],
+      "reviewVariables": [
+        {
+          "label": "ENTRY",
+          "text": "Review entry selection and timing."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed control before and during the hold."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude deviations through each circuit."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind-correction changes and pattern shape."
+        },
+        {
+          "label": "TRACK",
+          "text": "Review CDI/course tracking and fix crossings."
+        },
+        {
+          "label": "ATC",
+          "text": "Review clearances, restrictions, and reporting."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.III.B",
+        "taskName": "Holding Procedures",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "instrument-flight": {
+      "name": "Instrument Flight",
+      "category": "instrument-flight",
+      "acsTask": "IR.IV.A",
+      "objective": "Basic flight maneuvers solely by reference to instruments.",
+      "metrics": [
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain altitude during level flight.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain selected headings.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain selected airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Bank",
+          "value": "±5",
+          "unit": "DEG",
+          "description": "Maintain selected bank angles during turns.",
+          "note": "ACS tolerance: ±5°",
+          "showVisual": true,
+          "rangeMinLabel": "-5°",
+          "rangeMaxLabel": "+5°",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        }
+      ],
+      "criteria": [
+        "Maintain altitude, heading, airspeed, and bank within the applicable ACS tolerances.",
+        "Use a continuous instrument cross-check.",
+        "Interpret instrument indications correctly.",
+        "Apply appropriate pitch, bank, power, and trim corrections."
+      ],
+      "reviewVariables": [
+        {
+          "label": "SCAN",
+          "text": "Review continuity and prioritization of the instrument scan."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude trend and corrections."
+        },
+        {
+          "label": "HEADING",
+          "text": "Review heading stability."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed stability."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank-angle control during turns."
+        },
+        {
+          "label": "TRIM",
+          "text": "Review whether trim reduced workload."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.IV.A",
+        "taskName": "Instrument Flight",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "unusual-attitude-recovery": {
+      "name": "Recovery from Unusual Flight Attitudes",
+      "category": "instrument-flight",
+      "acsTask": "IR.IV.B",
+      "objective": "Recover from unusual flight attitudes solely by reference to instruments.",
+      "metrics": [
+        {
+          "label": "Recovery",
+          "value": "Prompt",
+          "unit": "ACTION",
+          "description": "Recognize the unusual attitude and apply the appropriate recovery procedure.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Aircraft Limits",
+          "value": "Observe",
+          "unit": "LIMITS",
+          "description": "Maintain control and remain within aircraft operating limitations.",
+          "note": "Use POH/AFM procedures and limitations.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Recognize the unusual attitude using available flight instruments.",
+        "Apply the appropriate recovery procedure without delay.",
+        "Use appropriate pitch, bank, power, and configuration inputs.",
+        "Avoid inappropriate control inputs caused by spatial disorientation.",
+        "Return to stabilized instrument flight while observing aircraft limitations."
+      ],
+      "reviewVariables": [
+        {
+          "label": "RECOGNITION",
+          "text": "Review how quickly the attitude was recognized."
+        },
+        {
+          "label": "PITCH",
+          "text": "Review pitch correction sequence."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank correction sequence."
+        },
+        {
+          "label": "POWER",
+          "text": "Review power management during recovery."
+        },
+        {
+          "label": "LIMITS",
+          "text": "Confirm aircraft limitations were respected."
+        },
+        {
+          "label": "STABILIZATION",
+          "text": "Review transition back to stable instrument flight."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.IV.B",
+        "taskName": "Recovery from Unusual Flight Attitudes",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "intercepting-tracking": {
+      "name": "Intercepting and Tracking Navigation Systems",
+      "category": "navigation",
+      "acsTask": "IR.V.A",
+      "objective": "Intercept and track courses, radials, bearings, and DME arcs using installed navigation systems.",
+      "metrics": [
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain altitude while intercepting and tracking.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain airspeed while intercepting and tracking.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading",
+          "value": "±5",
+          "unit": "DEG",
+          "description": "Maintain selected headings as required by the task.",
+          "note": "ACS tolerance: ±5°",
+          "showVisual": true,
+          "rangeMinLabel": "-5°",
+          "rangeMaxLabel": "+5°",
+          "rangeStart": 43.75,
+          "rangeWidth": 12.5
+        },
+        {
+          "label": "DME Arc",
+          "value": "±1",
+          "unit": "NM",
+          "description": "Maintain the specified DME arc distance when applicable.",
+          "note": "ACS tolerance: ±1 NM.",
+          "showVisual": true,
+          "rangeMinLabel": "-1 NM",
+          "rangeMaxLabel": "+1 NM",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Select, tune, identify, and verify the appropriate navigation source.",
+        "Determine aircraft position relative to the desired course, radial, bearing, or arc.",
+        "Select an appropriate intercept angle and establish the intercept.",
+        "Apply wind correction to maintain the desired track.",
+        "Maintain altitude, airspeed, and heading within task tolerances.",
+        "Monitor navigation displays and identify system or signal abnormalities."
+      ],
+      "reviewVariables": [
+        {
+          "label": "INTERCEPT",
+          "text": "Review intercept angle and timing."
+        },
+        {
+          "label": "TRACK",
+          "text": "Review tracking accuracy after intercept."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind-correction changes."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude control."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed control."
+        },
+        {
+          "label": "NAV SOURCE",
+          "text": "Confirm correct source selection and identification."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.V.A",
+        "taskName": "Intercepting and Tracking Navigational Systems and DME Arcs",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "departure-enroute-arrival": {
+      "name": "Departure, En Route, and Arrival Operations",
+      "category": "navigation",
+      "acsTask": "IR.V.B",
+      "objective": "Conduct published or assigned IFR departure, en route, and arrival procedures.",
+      "metrics": [
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain the assigned or selected altitude within ACS tolerance.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain the applicable or selected airspeed within ACS tolerance.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain selected headings within ACS tolerance.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Procedure",
+          "value": "Comply",
+          "unit": "PUBLISHED",
+          "description": "Fly the applicable procedure, clearance, altitude, and navigation guidance.",
+          "note": "Procedure-specific standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Use current charts and navigation data.",
+        "Set up and verify navigation equipment before each phase.",
+        "Comply with ATC clearances and published procedure restrictions.",
+        "Maintain airspeed, altitude, and headings within ACS tolerances.",
+        "Apply appropriate wind correction and track the assigned route.",
+        "Use checklists and manage automation appropriately."
+      ],
+      "reviewVariables": [
+        {
+          "label": "CLEARANCE",
+          "text": "Review compliance with assigned routing and restrictions."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude control."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed control."
+        },
+        {
+          "label": "TRACK",
+          "text": "Review lateral track accuracy."
+        },
+        {
+          "label": "AUTOMATION",
+          "text": "Review mode awareness and automation use."
+        },
+        {
+          "label": "WORKLOAD",
+          "text": "Review task management during transitions."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.V.B",
+        "taskName": "Departure, En Route, and Arrival Operations",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "nonprecision-approach": {
+      "name": "Non-Precision Approach",
+      "category": "approaches",
+      "acsTask": "IR.VI.A",
+      "objective": "Conduct a non-precision instrument approach to the applicable minimums.",
+      "metrics": [
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain approach airspeed within tolerance.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Course",
+          "value": "≤ 3/4",
+          "unit": "SCALE CDI",
+          "description": "Maintain lateral guidance within three-quarter-scale CDI deflection.",
+          "note": "ACS final-segment limit.",
+          "showVisual": false
+        },
+        {
+          "label": "MDA",
+          "value": "+100 / -0",
+          "unit": "FT",
+          "description": "Remain at or above MDA and within 100 feet above it, when applicable, through the VDP or MAP.",
+          "note": "ACS final-segment altitude standard.",
+          "showVisual": true,
+          "rangeMinLabel": "MDA",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Pre-Final Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain assigned/published altitude prior to the final approach segment.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Complete the selected non-precision approach using current procedure information.",
+        "Set up and verify the required navigation equipment.",
+        "Comply with ATC clearances and checklist requirements.",
+        "Establish the appropriate configuration and a stabilized descent.",
+        "Maintain lateral guidance, airspeed, and MDA requirements within ACS tolerances.",
+        "At the MAP/VDP, continue only with required visual references or execute the missed approach."
+      ],
+      "reviewVariables": [
+        {
+          "label": "COURSE",
+          "text": "Review lateral-guidance deviation."
+        },
+        {
+          "label": "MDA",
+          "text": "Review altitude management near minimums."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review approach-speed stability."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review timing of configuration changes."
+        },
+        {
+          "label": "STABILITY",
+          "text": "Review descent-rate and stabilized-approach trends."
+        },
+        {
+          "label": "DECISION",
+          "text": "Review landing-versus-missed decision at minimums."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VI.A",
+        "taskName": "Non-precision Approach",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "precision-approach": {
+      "name": "Precision Approach",
+      "category": "approaches",
+      "acsTask": "IR.VI.B",
+      "objective": "Conduct a precision or approach with vertical guidance to the applicable decision altitude/height.",
+      "metrics": [
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain approach airspeed within tolerance.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Lateral Guidance",
+          "value": "≤ 3/4",
+          "unit": "SCALE",
+          "description": "Maintain lateral guidance within the ACS limit on final.",
+          "note": "ACS final-segment guidance limit.",
+          "showVisual": false
+        },
+        {
+          "label": "Vertical Guidance",
+          "value": "≤ 3/4",
+          "unit": "SCALE",
+          "description": "Maintain vertical guidance within the ACS limit on final.",
+          "note": "ACS final-segment guidance limit.",
+          "showVisual": false
+        },
+        {
+          "label": "Pre-Final Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain required altitude prior to the final approach segment.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        }
+      ],
+      "criteria": [
+        "Complete the selected precision/vertical-guidance approach using current procedure information.",
+        "Set up, identify, and verify required navigation equipment.",
+        "Comply with ATC clearances and checklist requirements.",
+        "Establish a stabilized final approach with appropriate configuration.",
+        "Maintain lateral/vertical guidance and airspeed within ACS tolerances.",
+        "At decision altitude/height, continue only with required visual references or execute the missed approach."
+      ],
+      "reviewVariables": [
+        {
+          "label": "LOCALIZER",
+          "text": "Review lateral-guidance trend."
+        },
+        {
+          "label": "GLIDEPATH",
+          "text": "Review vertical-guidance trend."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed stability."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review configuration timing."
+        },
+        {
+          "label": "STABILITY",
+          "text": "Review approach stability."
+        },
+        {
+          "label": "DECISION",
+          "text": "Review DA/DH decision and transition."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VI.B",
+        "taskName": "Precision Approach",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "missed-approach": {
+      "name": "Missed Approach",
+      "category": "approaches",
+      "acsTask": "IR.VI.C",
+      "objective": "Execute the published or assigned missed approach procedure.",
+      "metrics": [
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain the recommended missed-approach airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading / Course",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain heading, course, or bearing within tolerance.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Altitude",
+          "value": "±100",
+          "unit": "FT",
+          "description": "Maintain assigned or published altitude(s) within tolerance after level-off.",
+          "note": "ACS tolerance: ±100 FT",
+          "showVisual": true,
+          "rangeMinLabel": "-100 FT",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Climb",
+          "value": "Positive",
+          "unit": "RATE",
+          "description": "Establish the appropriate climb and configuration promptly.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Promptly initiate the missed approach when required.",
+        "Apply power, establish the appropriate pitch attitude, and configure for climb.",
+        "Navigate and comply with the published or assigned missed-approach procedure.",
+        "Maintain recommended airspeed, course/heading, and altitude within ACS tolerances.",
+        "Communicate with ATC as appropriate.",
+        "Complete applicable checklist items and manage workload."
+      ],
+      "reviewVariables": [
+        {
+          "label": "INITIATION",
+          "text": "Review delay between decision and missed-approach initiation."
+        },
+        {
+          "label": "POWER",
+          "text": "Review power application and climb establishment."
+        },
+        {
+          "label": "CONFIGURATION",
+          "text": "Review configuration sequence."
+        },
+        {
+          "label": "NAVIGATION",
+          "text": "Review compliance with the missed-approach path."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed control."
+        },
+        {
+          "label": "ATC",
+          "text": "Review communication and workload management."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VI.C",
+        "taskName": "Missed Approach",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "circling-approach": {
+      "name": "Circling Approach",
+      "category": "approaches",
+      "acsTask": "IR.VI.D",
+      "objective": "Transition from an instrument approach to a circling maneuver and position for landing.",
+      "metrics": [
+        {
+          "label": "Airspeed",
+          "value": "±10",
+          "unit": "KTS",
+          "description": "Maintain the appropriate circling airspeed.",
+          "note": "ACS tolerance: ±10 KTS",
+          "showVisual": true,
+          "rangeMinLabel": "-10 KTS",
+          "rangeMaxLabel": "+10 KTS",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Altitude",
+          "value": "+100 / -0",
+          "unit": "FT",
+          "description": "Maintain circling altitude until a normal descent to landing is appropriate.",
+          "note": "ACS altitude standard before descent.",
+          "showVisual": true,
+          "rangeMinLabel": "MIN",
+          "rangeMaxLabel": "+100 FT",
+          "rangeStart": 50,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Heading / Track",
+          "value": "±10",
+          "unit": "DEG",
+          "description": "Maintain desired heading or track within tolerance where applicable.",
+          "note": "ACS tolerance: ±10°",
+          "showVisual": true,
+          "rangeMinLabel": "-10°",
+          "rangeMaxLabel": "+10°",
+          "rangeStart": 37.5,
+          "rangeWidth": 25
+        },
+        {
+          "label": "Bank",
+          "value": "≤30",
+          "unit": "DEG",
+          "description": "Use a bank angle appropriate for circling, not exceeding the ACS limit.",
+          "note": "ACS maximum bank: 30°.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Maintain appropriate circling airspeed and altitude until descent for landing is appropriate.",
+        "Remain within the circling area and maintain required visual references.",
+        "Apply wind correction and maintain a safe ground track.",
+        "Use a bank angle appropriate to conditions and within the ACS limit.",
+        "Position the airplane for a normal landing on the selected runway.",
+        "Execute a missed approach if visual reference is lost or a safe landing cannot be made."
+      ],
+      "reviewVariables": [
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude discipline before descent."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review circling airspeed."
+        },
+        {
+          "label": "BANK",
+          "text": "Review bank angle and turn radius."
+        },
+        {
+          "label": "GROUND TRACK",
+          "text": "Review runway-relative positioning and wind correction."
+        },
+        {
+          "label": "VISUAL",
+          "text": "Review continuity of required visual references."
+        },
+        {
+          "label": "MISSED",
+          "text": "Review decision-making if the circle became unstable."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VI.D",
+        "taskName": "Circling Approach",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "landing-from-instrument-approach": {
+      "name": "Landing from an Instrument Approach",
+      "category": "approaches",
+      "acsTask": "IR.VI.E",
+      "objective": "Transition from an instrument approach to a safe visual landing.",
+      "metrics": [
+        {
+          "label": "Transition",
+          "value": "Stable",
+          "unit": "PATH",
+          "description": "Transition from instrument references to visual references without destabilizing the approach.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Landing",
+          "value": "Safe",
+          "unit": "OUTCOME",
+          "description": "Complete a normal landing using appropriate procedures and control inputs.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Confirm the required visual references before continuing below minimums.",
+        "Transition smoothly from instrument to visual references.",
+        "Maintain a stabilized flightpath to the landing area.",
+        "Use appropriate configuration and wind correction.",
+        "Complete a normal landing or go around if the landing cannot be safely completed."
+      ],
+      "reviewVariables": [
+        {
+          "label": "TRANSITION",
+          "text": "Review instrument-to-visual transition."
+        },
+        {
+          "label": "PATH",
+          "text": "Review stability after visual acquisition."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed trend to touchdown."
+        },
+        {
+          "label": "WIND",
+          "text": "Review wind correction."
+        },
+        {
+          "label": "TOUCHDOWN",
+          "text": "Review touchdown control and alignment."
+        },
+        {
+          "label": "GO-AROUND",
+          "text": "Review whether a go-around was warranted."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VI.E",
+        "taskName": "Landing from an Instrument Approach",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "loss-of-communications": {
+      "name": "Loss of Communications",
+      "category": "emergency-operations",
+      "acsTask": "IR.VII.A",
+      "objective": "Apply appropriate IFR lost-communications procedures.",
+      "metrics": [
+        {
+          "label": "Procedure",
+          "value": "14 CFR 91.185",
+          "unit": "RULE",
+          "description": "Apply the applicable route, altitude, and clearance-limit procedures.",
+          "note": "Regulatory/procedural standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Navigation",
+          "value": "Maintain",
+          "unit": "CONTROL",
+          "description": "Continue safe aircraft control and navigation while managing the failure.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Recognize and troubleshoot the communications failure.",
+        "Select the appropriate route and altitude under the applicable lost-communications rules.",
+        "Use transponder and available communication/navigation resources appropriately.",
+        "Maintain aircraft control and situational awareness.",
+        "Proceed to the clearance limit and approach as appropriate to the scenario.",
+        "Complete appropriate checklist and emergency actions."
+      ],
+      "reviewVariables": [
+        {
+          "label": "RECOGNITION",
+          "text": "Review how quickly the failure was recognized."
+        },
+        {
+          "label": "TROUBLESHOOTING",
+          "text": "Review logical troubleshooting steps."
+        },
+        {
+          "label": "ROUTE",
+          "text": "Review route selection under the scenario."
+        },
+        {
+          "label": "ALTITUDE",
+          "text": "Review altitude selection."
+        },
+        {
+          "label": "NAVIGATION",
+          "text": "Review position awareness and procedure compliance."
+        },
+        {
+          "label": "WORKLOAD",
+          "text": "Review task prioritization during the failure."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VII.A",
+        "taskName": "Loss of Communications",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    },
+    "approach-loss-primary-instruments": {
+      "name": "Approach with Loss of Primary Flight Instrument Indicators",
+      "category": "emergency-operations",
+      "acsTask": "IR.VII.D",
+      "objective": "Conduct an instrument approach with simulated loss of primary flight instrument indications.",
+      "metrics": [
+        {
+          "label": "Control",
+          "value": "Maintain",
+          "unit": "AIRCRAFT",
+          "description": "Maintain positive aircraft control using remaining reliable indications.",
+          "note": "Qualitative ACS standard.",
+          "showVisual": false
+        },
+        {
+          "label": "Approach",
+          "value": "Within limits",
+          "unit": "GUIDANCE",
+          "description": "Maintain applicable approach guidance and tolerances using remaining instruments.",
+          "note": "Task-specific ACS standard.",
+          "showVisual": false
+        }
+      ],
+      "criteria": [
+        "Recognize unreliable or failed primary flight instrument indications.",
+        "Use appropriate backup instruments and available systems.",
+        "Maintain positive aircraft control and a disciplined instrument cross-check.",
+        "Set up and fly the assigned approach using remaining reliable information.",
+        "Maintain applicable airspeed, altitude, and guidance tolerances.",
+        "Execute a missed approach if the approach becomes unsafe or required information is unavailable."
+      ],
+      "reviewVariables": [
+        {
+          "label": "FAILURE ID",
+          "text": "Review recognition of unreliable indications."
+        },
+        {
+          "label": "BACKUP",
+          "text": "Review transition to alternate instruments."
+        },
+        {
+          "label": "SCAN",
+          "text": "Review revised instrument cross-check."
+        },
+        {
+          "label": "COURSE",
+          "text": "Review lateral guidance."
+        },
+        {
+          "label": "AIRSPEED",
+          "text": "Review airspeed control."
+        },
+        {
+          "label": "DECISION",
+          "text": "Review continuation versus missed-approach decision."
+        }
+      ],
+      "source": {
+        "documentTitle": "Instrument Rating – Airplane Airman Certification Standards",
+        "documentNumber": "FAA-S-ACS-8C",
+        "areaTask": "IR.VII.D",
+        "taskName": "Approach with Loss of Primary Flight Instrument Indicators",
+        "url": "https://www.faa.gov/training_testing/testing/acs/instrument_rating_airplane_acs_8.pdf",
+        "verifiedAgainstFAA": "2026-08-19"
+      }
+    }
+  }
+}
